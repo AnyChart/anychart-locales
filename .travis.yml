@@ -1,0 +1,37 @@
+language: node_js
+node_js:
+  - node
+
+branches:
+  only:
+    - master
+  except:
+    - /^v\d+\.\d+\.\d+$/
+
+addons:
+  ssh_known_hosts:
+    - 104.236.0.245
+    - static.anychart.com
+
+cache: npm
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_70c31ee585ad_key -iv $encrypted_70c31ee585ad_iv -in ./scripts/anychart-deploy-key.enc -out ~/.ssh/id_rsa -d
+  - chmod 400 ~/.ssh/id_rsa
+  - echo -e "Host static.anychart.com\n\tForwardAgent yes" >> ~/.ssh/config
+
+install:
+  - npm install
+
+before_script:
+  - npm install maxcdn
+
+script:
+  - . ./scripts/release.sh
+
+deploy:
+  provider: releases # github releases
+  draft: true
+  skip_cleanup: true
+  api_key:
+    secure: P/D8jiJ1PuNBWZexE9c2JSrWObcEKYjES38IeoMYDqfOr+vBpZHf3ykT65xAwmwpilCb/9i7bMI9Ijpk+c3WILtqmjbDl7M7sxJx5HFfsjQc6F3K0m3dHust4DYVkZn9IFGASQ2xzmCwaKyI8pJKCsSF6a/erjtGG6wsOSIAKBrrvh5sgH7v+wKtpNDbCTqueEimFEanLdj/I+2OMdu9ibMkp4mk5w/SBEEPmfO+o5UGRKE/nDjfx5t+F5UBvVX5xeMBQhsclWHjQumJHf/vRmZyW4b+xdpWtepJkqYBTHj6p/L1Qp0vFaKvd05RpOMrFGe4OMjgdnWyxZR/O3cSq7oFS4/1Y16qYzTNJkVRIxFCmwc8WriPSQlp9YVAhKQQq0AH8Gautepg5NNTfDqsxHi/fYmW+8n5JruFx6n6bFuq/IP6yNb/s8F+RkNCM9hOHjYJH/FU2TMgcYhgo25IFINc4+Fhdkvjl8XPf/8YiqNZtnosi/WMMqm6hs4wLmVG1WYHDmMpa7jEeGy87i4gvPZSOsWmnM5ZlDuPc2uEHBAkkcKeYw4D1CjOD2YNA6vrCRzF9F5ZxLztWn1uPVYLhiohrAPQ/E5u5Piyr3CcBsfmwcD6KC9yN8Q5hlIeNXUfserynRUamWmBwLodIQbPYGPOC9AVhvXC/6dd1XrujNo=

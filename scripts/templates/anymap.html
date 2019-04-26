@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='ac:name' content='{{= it.locale }}' />
+    <meta name='ac:short-desc' content='' />
+    <meta name='ac:desc' content='' />
+
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-base.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-map.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/locales/{{= it.locale }}.js'></script>
+    <script src='https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js'></script>
+
+    <link rel='stylesheet' type='text/css' href='https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css' />
+
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script x-export='map'>
+        anychart.onDocumentReady(function() {
+            // set output locale
+            anychart.format.outputLocale('{{= it.locale }}');
+            // create data set
+            var dataSet = anychart.data.set([{
+                    id: 'AU.NS',
+                    value: 1,
+                    gover: Date.UTC(1855, 6, 16)
+                }, // new south wales   self gov    16 July 1855
+                {
+                    id: 'AU.NT',
+                    value: 2,
+                    gover: Date.UTC(1978, 6, 1)
+                }, // northern terr     self gov    01 July 1978
+                {
+                    id: 'AU.WA',
+                    value: 3,
+                    gover: Date.UTC(1890, 9, 21)
+                }, // west aus          self gov    21 October 1890
+                {
+                    id: 'AU.SA',
+                    value: 4,
+                    gover: Date.UTC(1857, 3, 22)
+                }, // south aus         self gov    22 April 1857
+                {
+                    id: 'AU.VI',
+                    value: 5,
+                    gover: Date.UTC(1855, 10, 23)
+                }, // victoria          self gov    23 November 1855
+                {
+                    id: 'AU.QL',
+                    value: 6,
+                    gover: Date.UTC(1859, 5, 6)
+                }, // queensland        self gov    06 June 1859
+                {
+                    id: 'AU.TS',
+                    value: 7,
+                    gover: Date.UTC(1856, 11, 2)
+                } // tasmania          self gov    02 December 1856
+            ]);
+            // create map chart
+            map = anychart.map();
+            // set geodata using https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
+            map.geoData(anychart.maps.australia);
+            //create bubble series
+            var series = map.choropleth(dataSet);
+            series.labels(true);
+            series.labels().fontColor('#000');
+            series.labels().format(function() {
+                return anychart.format.date(this.getData('gover'));
+            });
+            //set series geo id field settings
+            series.geoIdField('code_hasc');
+            // set container id for the chart
+            map.container('container');
+            // initiate chart drawing
+            map.draw();
+        });
+    </script>
+</head>
+
+<body>
+    <div id='container'></div>
+</body>
+
+</html>

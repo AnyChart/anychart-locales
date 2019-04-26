@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='ac:name' content='{{= it.locale }}' />
+    <meta name='ac:short-desc' content='' />
+    <meta name='ac:desc' content='' />
+
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-base.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-gantt.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js'></script>
+    <script src='https://cdn.anychart.com/releases/v8/locales/{{= it.locale }}.js'></script>
+
+    <link rel='stylesheet' type='text/css' href='https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css' />
+
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script x-export='chart'>
+        anychart.onDocumentReady(function() {
+            // set locales
+            anychart.format.inputLocale('{{= it.locale }}');
+            anychart.format.inputDateTimeFormat('yyyy.MM.dd'); //Like '2015.03.12'
+            anychart.format.outputLocale('{{= it.locale }}');
+            // create data
+            var treeData = anychart.data.tree(getData(), 'as-table');
+            // create gantt-project chart
+            chart = anychart.ganttProject();
+            // set container id
+            chart.container('container');
+            // set data
+            chart.data(treeData);
+            // datagrid settings
+            var dataGrid = chart.dataGrid();
+            dataGrid.column(0).title().text('#');
+            dataGrid.column(1).width(250).title('title');
+            var c2 = dataGrid.column(2);
+            c2.labels().format(function() {
+                var start = this.actualStart || this.autoStart;
+                return anychart.format.date(start);
+            });
+            c2.title('start');
+            var c3 = dataGrid.column(3);
+            c3.labels().format(function() {
+                var end = this.actualEnd || this.autoEnd;
+                return (end === void 0) ? '' : anychart.format.date(end); //can be milestone
+            });
+            c3.title('end');
+            // tooltip settings
+            dataGrid.tooltip().format(tooltipFormatter);
+            chart.getTimeline().tooltip().format(tooltipFormatter);
+            // initiate chart drawing
+            chart.draw();
+        });
+        // formatter for timeline and datagrid tooltips
+        function tooltipFormatter() {
+            var startDate = this.actualStart || this.autoStart;
+            var endDate = this.actualEnd || this.autoEnd;
+            var progress = this.progressValue;
+            if (progress === void 0) {
+                var auto = this.autoProgress * 100;
+                progress = (Math.round(auto * 100) / 100 || 0) + '%';
+            }
+            return (startDate ? 'start date: ' + anychart.format.date(startDate) : '') +
+                (endDate ? '\nend date: ' + anychart.format.date(endDate) : '') +
+                (progress ? '\nprogress: ' + progress : '');
+        }
+        // simple data
+        function getData() {
+            return [{
+                    id: '1',
+                    name: 'Phase 1 - Strategic Plan'
+                },
+                {
+                    id: '2',
+                    name: 'Self assessment',
+                    parent: '1'
+                },
+                {
+                    id: '3',
+                    name: 'It defines the business vision',
+                    parent: '2',
+                    actualStart: '2015.03.13',
+                    actualEnd: '2015.03.24'
+                },
+                {
+                    id: '4',
+                    name: 'To identify the available skills, information and support',
+                    parent: '2',
+                    actualStart: '2015.03.25',
+                    actualEnd: '2015.04.06'
+                },
+                {
+                    id: '5',
+                    name: 'Decide whether you want to continue',
+                    parent: '2',
+                    actualStart: '2015.04.07',
+                    actualEnd: '2015.04.15',
+                    baselineStart: '2015.04.06',
+                    baselineEnd: '2015.04.18'
+                }
+            ];
+        }
+    </script>
+</head>
+
+<body>
+    <div id='container'></div>
+</body>
+
+</html>
