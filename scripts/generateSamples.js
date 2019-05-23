@@ -2,7 +2,7 @@
  * Generate playground samples for all locales.
  */
 
-const { mkdirAsync, readDirAsync, readFileAsync, writeFileAsync } = require('./utils');
+const { mkdirAsync, readDirAsync, readFileAsync, writeFileAsync, getVersion } = require('./utils');
 
 const dot = require('dot');
 dot.templateSettings.strip = false;
@@ -18,6 +18,7 @@ const PRODUCTS = ['anychart', 'anygantt', 'anymap', 'anystock'];
  * Main function.
  */
 async function main() {
+    const version = await getVersion();
     const files = await readDirAsync(SRC_PATH, 'utf8');
     const localeNames = files.map(fileName => fileName.replace('.js', ''));
     for (const product of PRODUCTS) {
@@ -27,7 +28,7 @@ async function main() {
         let templateProcessor = dot.template(templateString);
         console.log(`Generating ${product} samples.`);
         for (const locale of localeNames) {
-            let htmlContent = templateProcessor({ locale });
+            let htmlContent = templateProcessor({ locale, version });
             let htmlPath = path.resolve(productPath, `${locale}.html`);
             await writeFileAsync(htmlPath, htmlContent);
         }

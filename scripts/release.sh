@@ -12,6 +12,26 @@ run () {
 }
 
 echo "--"
+echo "Build samples"
+echo "--"
+run "node ./scripts/generateSamples.js"
+echo
+
+echo "--"
+echo "Creating/checkout branch for locales-samples: $VERSION"
+run "cd ../locales-samples"
+run "git checkout -b $VERSION || git checkout $VERSION"
+echo "Updating samples"
+run "cp -R ../anychart-locales/samples/* ./"
+echo "Commit and push"
+run "git add ."
+run "git commit -am 'Update version $VERSION'"
+run "git push -u origin $VERSION"
+
+run "cd ../anychart-locales"
+run "rm -rf samples"
+
+echo "--"
 echo "Build locales"
 echo "--"
 run "node ./scripts/build.js"
