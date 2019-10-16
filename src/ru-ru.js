@@ -520,7 +520,17 @@ const locale = {
     'Keep only': 'Оставить только эту точку',
     'Include all': 'Вернуть все точки',
     'Start selection marquee': 'Выделить область',
-    'Start zoom marquee': 'Выбрать область увеличения'
+    'Start zoom marquee': 'Выбрать область увеличения',
+
+    'Zoom In': 'Увеличить',
+    'Zoom Out': 'Уменьшить',
+    'Fit All': 'По размеру страницы',
+    'Expand All': 'Развернуть все',
+    'Collapse All': 'Свернуть все',
+    'Landscape': 'Альбомная',
+    'Portrait': 'Книжная',
+    'Save As': 'Сохранить как',
+    'Switch page orientation': 'Сменить ориентацию страницы'
   }
 };
 

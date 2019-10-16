@@ -503,6 +503,18 @@ const locale = {
     scale: false,
     zeroFillDecimals: false,
     scaleSuffixSeparator: ""
+  },
+  messages: {
+    'Zoom In': 'Yakınlaştır',
+    'Zoom Out': 'Uzaklaştır',
+    'Expand All': 'Tümünü genişlet',
+    'Collapse All': 'Tümünü daralt',
+    'Fit All': 'Sayfaya sığdır',
+    'Landscape': 'Yatay',
+    'Portrait': 'Dikey',
+    'Save As': 'Dışa aktar',
+    'Switch page orientation': 'Yatay / Dikey',
+    'Print': 'Yazdır'
   }
 };
 

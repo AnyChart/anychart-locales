@@ -528,7 +528,17 @@ const locale = {
     'Keep only': 'Garder uniquement',
     'Include all': 'Inclure tout',
     'Start selection marquee': 'Démarrer la zone de sélection',
-    'Start zoom marquee': 'Démarrer la zone de zoom'
+    'Start zoom marquee': 'Démarrer la zone de zoom',
+
+    'Zoom In': 'Zoom avant',
+    'Zoom Out': 'Zoom Arrière',
+    'Expand All': 'Étendre tout',
+    'Collapse All': 'Réduire tout',
+    'Fit All': 'Taille de la page',
+    'Landscape': 'Paysage',
+    'Portrait': 'Portrait',
+    'Save As': 'Exporter',
+    'Switch page orientation': 'Paysage / Portrait'
   }
 };
 

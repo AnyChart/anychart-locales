@@ -533,7 +533,17 @@ const locale = {
     'Keep only': '유지:',
     'Include all': '모두 포함',
     'Start selection marquee': '선택 마퀴 시작',
-    'Start zoom marquee': '줌 마퀴 시작'
+    'Start zoom marquee': '줌 마퀴 시작',
+
+    'Zoom In': '확대',
+    'Zoom Out': '축소',
+    'Expand All': '모두 확장',
+    'Collapse All': '모두 축소',
+    'Fit All': '페이지에 맞춤',
+    'Landscape': '가로',
+    'Portrait': '세로',
+    'Save As': '내보내기',
+    'Switch page orientation': '가로 / 세로'
   }
 };
 

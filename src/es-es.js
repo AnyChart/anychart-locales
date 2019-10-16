@@ -533,7 +533,17 @@ const locale = {
     'Keep only': 'Mantener solo',
     'Include all': 'Incluir todos',
     'Start selection marquee': 'Iniciar recuadro de selección',
-    'Start zoom marquee': 'Iniciar recuadro de ampliación'
+    'Start zoom marquee': 'Iniciar recuadro de ampliación',
+
+    'Zoom In': 'Acercar',
+    'Zoom Out': 'Alejar',
+    'Expand All': 'Expandir todo',
+    'Collapse All': 'Contraer todo',
+    'Fit All': 'Ajustar a la página',
+    'Landscape': 'Apaisado',
+    'Portrait': 'Vertical',
+    'Save As': 'Exportar',
+    'Switch page orientation': 'Apaisado / Vertical'
   }
 };
 

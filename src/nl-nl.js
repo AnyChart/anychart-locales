@@ -503,6 +503,18 @@ const locale = {
     scale: false,
     zeroFillDecimals: false,
     scaleSuffixSeparator: ""
+  },
+  messages: {
+    'Zoom In': 'Inzoomen',
+    'Zoom Out': 'Uitzoomen',
+    'Expand All': 'Alles uitvouwen',
+    'Collapse All': 'Alles samenvouwen',
+    'Fit All': 'Passend op pagina',
+    'Landscape': 'Liggend',
+    'Portrait': 'Staand',
+    'Save As': 'Exporteren',
+    'Switch page orientation': 'Liggend / Staand',
+    'Print': 'Afdrukken'
   }
 };
 

@@ -520,7 +520,17 @@ const locale = {
     'Keep only': 'Mantieni solo',
     'Include all': 'Includi tutto',
     'Start selection marquee': 'Inizia a selezionare testo scorrevole',
-    'Start zoom marquee': 'Inizia lo zoom del testo scorrevole'
+    'Start zoom marquee': 'Inizia lo zoom del testo scorrevole',
+
+    'Zoom In': 'Zoom avanti',
+    'Zoom Out': 'Riduci zoom',
+    'Expand All': 'Espandi tutto',
+    'Collapse All': 'Comprimi tutto',
+    'Fit All': 'Adatta alla pagina',
+    'Landscape': 'Orizzontale',
+    'Portrait': 'Verticale',
+    'Save As': 'Esporta',
+    'Switch page orientation': 'Orizzontale / Verticale'
   }
 };
 

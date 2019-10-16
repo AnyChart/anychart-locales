@@ -511,6 +511,18 @@ const locale = {
     scale: false,
     zeroFillDecimals: false,
     scaleSuffixSeparator: ""
+  },
+  messages: {
+    'Zoom In': 'Powiększ',
+    'Zoom Out': 'Zmniejsz',
+    'Expand All': 'Rozwiń wszystko',
+    'Collapse All': 'Zwiń wszystko',
+    'Fit All': 'Dopasuj do strony',
+    'Landscape': 'Orientacja pozioma',
+    'Portrait': 'Orientacja pionowa',
+    'Save As': 'Eksportuj',
+    'Switch page orientation': 'Orientacja pozioma / pionowa',
+    'Print': 'Drukować'
   }
 };
 

@@ -531,9 +531,19 @@ const locale = {
     'Exclude': '除外する',
     'Include': '含める',
     'Keep only': 'これだけを保持する',
-    'Include all': 'すべて含める',
+    'Include all': '全て含める',
     'Start selection marquee': '選択マーキーを開始する',
-    'Start zoom marquee': 'ズームマーキーを開始する'
+    'Start zoom marquee': 'ズームマーキーを開始する',
+
+    'Zoom In': 'ズームイン',
+    'Zoom Out': 'ズームアウト',
+    'Expand All': '全てを展開',
+    'Collapse All': '全て折りたたむ',
+    'Fit All': 'ページに合わせる',
+    'Landscape': '横',
+    'Portrait': '縦',
+    'Save As': 'エクスポート',
+    'Switch page orientation': '横 / 縦'
   }
 };
 

@@ -510,7 +510,7 @@ const locale = {
     'Share with...': 'Teilen mit...',
     'Save config as...': 'Konfiguration speichern unter...',
     'Save table as...': 'Tabelle speichern unter...',
-    'Print': 'Drucken',
+    'Print': 'Drücken',
     'Enter full screen': 'Vollbildmodus aktivieren',
     'Exit full screen': 'Vollbildmodus beenden',
     'Need help? Go to support center!': 'Sie brauchen Hilfe? Gehen Sie zum Supportcenter!',
@@ -520,7 +520,17 @@ const locale = {
     'Keep only': 'Nur behalten',
     'Include all': 'Alle einbeziehen',
     'Start selection marquee': 'Bereich auswählen',
-    'Start zoom marquee': 'Vergrößerungsbereich auswählen'
+    'Start zoom marquee': 'Vergrößerungsbereich auswählen',
+
+    'Zoom In': 'Vergrößern',
+    'Zoom Out': 'Verkleinern',
+    'Expand All': 'Alles erweitern',
+    'Collapse All': 'Alles schließen',
+    'Fit All': 'An Seite anpassen',
+    'Landscape': 'Querformat',
+    'Portrait': 'Hochformat',
+    'Save As': 'Exportieren',
+    'Switch page orientation': 'Querformat / Hochformat'
   }
 };
 

@@ -508,6 +508,18 @@ const locale = {
     scale: false,
     zeroFillDecimals: false,
     scaleSuffixSeparator: ""
+  },
+  messages: {
+    'Zoom In': 'Zooma in',
+    'Zoom Out': 'Zooma ut',
+    'Expand All': 'Visa alla',
+    'Collapse All': 'Dölj alla',
+    'Fit All': 'Anpassa till sida',
+    'Landscape': 'Liggande',
+    'Portrait': 'Stående',
+    'Save As': 'Exportera',
+    'Switch page orientation': 'Liggande / Stående',
+    'Print': 'Skriva ut'
   }
 };
 

@@ -541,7 +541,17 @@ const locale = {
     'Keep only': '仅保留',
     'Include all': '包括全部',
     'Start selection marquee': '开始选择选框',
-    'Start zoom marquee': '开始缩放选框'
+    'Start zoom marquee': '开始缩放选框',
+
+    'Zoom In': '放大',
+    'Zoom Out': '缩小',
+    'Expand All': '全部展开',
+    'Collapse All': '全部折叠',
+    'Fit All': '适合页面',
+    'Landscape': '景观',
+    'Portrait': '肖像',
+    'Save As': '导出',
+    'Switch page orientation': '景观 / 肖像'
   }
 };
 

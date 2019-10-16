@@ -524,6 +524,18 @@ const locale = {
     scale: false,
     zeroFillDecimals: false,
     scaleSuffixSeparator: ""
+  },
+  messages: {
+    'Zoom In': '放大',
+    'Zoom Out': '縮小',
+    'Expand All': '全部展開',
+    'Collapse All': '全部摺疊',
+    'Fit All': '調整大小以符合頁面',
+    'Landscape': '橫向',
+    'Portrait': '縱向',
+    'Save As': '匯出',
+    'Switch page orientation': '橫向 / 縱向',
+    'Print': '打印'
   }
 };
 
